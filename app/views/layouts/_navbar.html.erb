@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <% if user_signed_in? %>
+        <%= link_to 'Dashboard', root_path, class: 'nav-item nav-link' %>
+        <%= link_to 'Profile', edit_user_registration_path, class: 'nav-item nav-link' %>
+        <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'nav-item nav-link ' %>
+      <% else %>
+        <%= link_to 'Sign Up!', new_user_registration_path, class: 'nav-item nav-link' %>
+      <% end %>
+
+    </div>
+  </div>
+</nav>
